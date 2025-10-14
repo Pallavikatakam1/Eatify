@@ -1,0 +1,182 @@
+body {
+  overflow-x: hidden;
+  margin: 0 5% 2% 5%;
+}
+
+.navbar2 {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  
+}
+
+.buttons {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  padding: 2%;
+  margin-left: 50px;
+}
+
+.filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background-color: #fff;
+  color: #666;
+  border: 1px solid #d3d3d3;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.filter-btn:hover {
+  background-color: #f8f8f8;
+  border-color: #bbb;
+  color: #333;
+}
+
+.filter-icon,
+.down-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.dishes-container {
+  text-align: center;
+  margin-top: 20px;
+  position: relative;
+  height: 300px;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  background-color: whitesmoke;
+  
+}
+
+.dishes-container h2 {
+  font-size: 30px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 25px;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.scroll-wrapper {
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.dish-list {
+  display: flex;
+  gap: 30px;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.dish-list::-webkit-scrollbar {
+  display: none;
+}
+
+.dish-item {
+  text-align: center;
+  cursor: pointer;
+  flex: 0 0 calc(100% / 6 - 25px); 
+  transition: transform 0.2s ease;
+  align-items: center;
+}
+
+.dish-item:hover {
+  transform: scale(1.05);
+}
+
+.dish-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 12px;
+}
+
+.dish-name {
+  font-size: 18px;
+  font-weight: 500;
+  color: #444;
+}
+
+.scroll-btn {
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  color: #333;
+  font-size: 20px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  transition: 0.2s;
+  z-index: 10;
+  align-items: center;
+}
+
+.scroll-btn:hover {
+  background-color: #fcfbfb;
+}
+
+.scroll-btn.left {
+  left: -10px;
+}
+
+.scroll-btn.right {
+  right: -10px;
+}
+
+.arrow-icon {
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 600px) {
+  .buttons {
+    margin-left: 20px;
+    gap: 10px;
+  }
+
+  .filter-btn {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+
+  .scroll-wrapper {
+    width: 95%;
+  }
+
+  .dish-item {
+    flex: 0 0 calc(100% / 3 - 10px); 
+  }
+
+  .dish-image {
+    width: 90px;
+    height: 90px;
+  }
+
+  .scroll-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+}
