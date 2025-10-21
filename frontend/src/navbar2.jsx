@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "./navbar2.css";
 import filter from "./assets/filter.png";
 import downarr from "./assets/down.png";
@@ -14,6 +15,7 @@ import dessert from "./assets/dessert.webp";
 import icecream from "./assets/icecream.jpg";
 import leftarrow from "./assets/leftarrow.png";
 import rightarrow from "./assets/rightarrow.png";
+// FilterPage is rendered via route; navigation uses useNavigate
 
 const Navbar2 = () => {
   const dishes = [
@@ -70,10 +72,16 @@ const Navbar2 = () => {
     };
   }, []);
 
+  const navigate = useNavigate();
+
+  const handleFilterClick = () => {
+    navigate("/FilterPage");
+  }
+
   return (
     <div className="navbar2">
       <div className="buttons">
-        <button className="filter-btn">
+        <button className="filter-btn" onClick={handleFilterClick}>
           <img src={filter} alt="Filter" className="filter-icon" />
           Filters
         </button>
